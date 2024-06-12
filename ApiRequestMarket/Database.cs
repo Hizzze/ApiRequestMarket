@@ -62,7 +62,55 @@ public class Database
             }
         }
     }
-    
+
+    public static int getUserAccessLevel(string email)
+    {
+        int access_level;
+        using (var connection = new MySqlConnection(connectionString))
+        {
+            try
+            {
+                connection.Open();
+                using (var command = connection.CreateCommand())
+                {
+                    command.CommandText = "SELECT access_level FROM users WHERE email = @email";
+                    command.Parameters.AddWithValue("@email", email);
+                    access_level = Convert.ToInt32(command.ExecuteScalar());
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
+
+        return access_level;
+    }
+
+    public static string getUserSavedApiKey(string email)
+    {
+        string apiKey = "null";
+        using (var connection = new MySqlConnection(connectionString))
+        {
+            try
+            {
+                connection.Open();
+                using (var command = connection.CreateCommand())
+                {
+                    command.CommandText = "SELECT api_key FROM accounts WHERE email = @email";
+                    command.Parameters.AddWithValue("@email", email);
+                    var result = command.ExecuteScalar();
+                    apiKey = result == null ? "null" : result.ToString();
+                }
+            }
+            catch (Exception e)
+            {
+                
+            }
+        }
+        return apiKey;
+    }
     public static async Task<bool> verifyUserData(string email, string password)
     {
         using (var connection = new MySqlConnection(connectionString))
