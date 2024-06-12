@@ -29,7 +29,7 @@ public class LoginController : Controller
             var claimsPrincipal = new ClaimsPrincipal(claimsIdentity);
             await HttpContext.SignInAsync("CookieAuth", claimsPrincipal);
             await users.addUserToList(email);
-            return RedirectToAction("Index", "Home"); // Перенаправление после успешного входа
+            return RedirectToAction("Index", "Home");
         }
         else
         {

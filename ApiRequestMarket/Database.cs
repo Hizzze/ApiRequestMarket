@@ -5,7 +5,7 @@ namespace ApiRequestMarket;
 public class Database
 {
     private static string connectionString;
-
+    private static string connectionString2;
     static Database()
     {
         var builder = new ConfigurationBuilder()
@@ -13,6 +13,7 @@ public class Database
             .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
         IConfigurationRoot config = builder.Build();
         connectionString = config.GetConnectionString("DefaultConnection");
+        connectionString2 = config.GetConnectionString("APIConnection");
     }
     
     public static async Task<bool> IsUserRegistered(string email)
@@ -39,7 +40,36 @@ public class Database
             return exists;
         }
     }
-    
+    public static List<Item> getItemsList()
+    {
+        List<Item> items = new List<Item>();
+        using (var connection = new MySqlConnection(connectionString2))
+        {
+            try
+            {
+                connection.Open();
+                using (var command = connection.CreateCommand())
+                {
+                    command.CommandText = "SELECT id, name, price, count, path, description, category_id FROM items";
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            items.Add(new Item(reader.GetInt32(0),reader.GetString(1), reader.GetDecimal(2), reader.GetInt32(3),
+                                reader.GetString(4), reader.GetString(5), reader.GetInt64(6)));
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.Log("Error on get items: " + ex.Message, Logger.LogLevel.Error);
+                throw;
+            }
+        }
+
+        return items;
+    }
     public static async Task RegisterInDatabase(string email, string password)
     {
         using (var connection = new MySqlConnection(connectionString))
@@ -73,9 +103,10 @@ public class Database
                 connection.Open();
                 using (var command = connection.CreateCommand())
                 {
-                    command.CommandText = "SELECT access_level FROM users WHERE email = @email";
+                    command.CommandText = "SELECT access_level FROM accounts WHERE email = @email";
                     command.Parameters.AddWithValue("@email", email);
-                    access_level = Convert.ToInt32(command.ExecuteScalar());
+                    var result = command.ExecuteScalar();
+                    access_level = Convert.ToInt32(result);
                 }
             }
             catch (Exception e)

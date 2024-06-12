@@ -1,4 +1,3 @@
-
 using MySqlConnector;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
@@ -17,7 +16,6 @@ public class User
         access_level = Database.getUserAccessLevel(email);
         apiKey = Database.getUserSavedApiKey(email);
     }
-
     public User(string email, string password)
     {
         this.email = email;
@@ -36,6 +34,6 @@ public class User
 
     public async Task registerUser()
     {
-        await Database.RegisterInDatabase(email, password);
+        await Database.RegisterInDatabase(email, Hash.HashPassword(password));
     }
 }
