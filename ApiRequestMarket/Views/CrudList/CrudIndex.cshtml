@@ -1,0 +1,69 @@
+@* @model TModel *@
+@* *@
+@* @{ *@
+@*     Layout = null; *@
+@* } *@
+@* *@
+@* *@
+@* <!DOCTYPE html> *@
+@* <html lang="en"> *@
+@* <head> *@
+@*     <meta charset="UTF-8"> *@
+@*     <meta name="viewport" content="width=device-width, initial-scale=1.0"> *@
+@*     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> *@
+@*     <title>Bootstrap Table</title> *@
+@* </head> *@
+@* <body> *@
+@* <div class="container"> *@
+@*     <div class="row"> *@
+@*         <div class="col"> *@
+@*          *@
+@*             <a href="/Home/Add" type="button" class="btn btn-success">Add</a> *@
+@* *@
+@*             <table class="table"> *@
+@*                 <thead> *@
+@*                 <tr> *@
+@*                     <th>Id</th> *@
+@*                     <th>First name</th> *@
+@*                     <th>Second name</th> *@
+@*                     <th>Age</th> *@
+@*                     <td>Delete</td> *@
+@*                     <td>Update</td> *@
+@*                 </tr> *@
+@*                 </thead> *@
+@*                 <tbody> *@
+@*                @if (Model != null) *@
+@*                { *@
+@*                    @foreach (var item in Model) *@
+@*                    { *@
+@*                        <tr> *@
+@*                            <td></td> *@
+@*                            <td></td> *@
+@*                            <td></td> *@
+@*                            <td></td> *@
+@*                            <td> *@
+@*                                <form asp-controller="Home" asp-action="" method="post"> *@
+@*                                    <input type="hidden" name="id" value="@item.Id"> *@
+@*                                    <button type="submit" class="btn btn-danger">Delete</button> *@
+@*                                </form> *@
+@*                            </td> *@
+@*                             *@
+@*                            <td> *@
+@*                                <form asp-action="" asp-controller="Home" method="post"> *@
+@*                                    <input type="hidden" name="id" value="@item.Id"> *@
+@*                                    <button type="submit" class="btn btn-primary">Update</button> *@
+@*                                </form> *@
+@*                            </td> *@
+@*                        </tr> *@
+@*                    } *@
+@*                } *@
+@*                 </tbody> *@
+@*             </table> *@
+@*         </div> *@
+@*     </div> *@
+@* </div> *@
+@* *@
+@* <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> *@
+@* <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> *@
+@* </body> *@
+@* </html> *@

@@ -22,7 +22,7 @@ public class HomeController : Controller
         {
             model = new HomeViewModel()
             {
-                items = Database.getItemsList()
+                Items = Database.getItemsList()
             };
         }
         else

@@ -1,8 +1,9 @@
-﻿@model HomeViewModel
+﻿@model ApiRequestMarket.Models.HomeViewModel
 
 @{
     ViewData["Title"] = "Home Page";
 }
+
 <section class="header__main">
     <div class="container">
         <div class="header__inner">
@@ -21,7 +22,50 @@
                 {
                     <a asp-controller="Login" asp-action="Login" class="header__section section__btn">Zaloguj się</a>
                 }
-                
+
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <div class="row">
+                        <div class="col">
+                            <a href="/Home/Add" type="button" class="btn btn-success">Add</a>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Description</th>
+                                        <th>Price</th>
+                                        <th>Image</th>
+                                        <td>Delete</td>
+                                        <td>Update</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model.Items)
+                                    {
+                                        <tr>
+                                            <td>@item.name</td>
+                                            <td>@item.description</td>
+                                            <td>@item.price zł</td>
+                                            <td>@item.pathImage</td>
+                                            <td>
+                                                <form asp-controller="Home" method="post">
+                                                    <input type="hidden" name="id" value="@item.name">
+                                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                                </form>
+                                            </td>
+                                            <td>
+                                                <form asp-controller="Home" method="post">
+                                                    <input type="hidden" name="id" value="@item.description">
+                                                    <button type="submit" class="btn btn-primary">Update</button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                }
             </div>
         </div>
     </div>

@@ -1,0 +1,52 @@
+@using Microsoft.AspNetCore.Http.Features
+@model ApiRequestMarket.Models.HomeViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <title>Bootstrap Input Page</title>
+</head>
+<body>
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <h2 class="text-center mb-4">Add Item</h2>
+        
+          <form asp-controller="Home" asp-action="">
+        @foreach (var item in Model.Items)
+        {
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input asp-for="@item.name" type="text" class="form-control" id="firstName" placeholder="Enter first name">
+            </div>
+            <div class="form-group">
+              <label for="description">Description</label>
+              <input asp-for="@item.description" type="text" class="form-control" id="lastName" placeholder="Enter last name">
+            </div>
+            <div class="form-group">
+              <label for="image">Image</label>
+              <input asp-for="@item.pathImage" type="text" class="form-control" id="lastName" placeholder="Enter last name">
+            </div>
+            <div class="form-group">
+              <label for="price">Price</label>
+              <input asp-for="@item.price" type="text" class="form-control" id="age" placeholder="Enter email">
+            </div>
+          
+            <button type="submit" class="btn btn-primary">Submit</button>
+        }
+          </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
