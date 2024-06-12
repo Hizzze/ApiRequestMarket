@@ -6,11 +6,11 @@ namespace ApiRequestMarket.Controllers;
 
 public class HomeController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
+    private readonly ILogger<HomeController> _loggger;
 
     public HomeController(ILogger<HomeController> logger)
     {
-        _logger = logger;
+        _loggger = logger;
     }
 
     public IActionResult Index()
