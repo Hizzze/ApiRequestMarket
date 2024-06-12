@@ -1,4 +1,4 @@
-namespace ApiRequestMarket.Controllers;
+namespace ApiRequestMarket;
 
 public class Logger
 {

@@ -1,7 +1,7 @@
 using System.Security.Cryptography;
 using System.Text;
 
-namespace ApiRequestMarket.Controllers;
+namespace ApiRequestMarket;
 
 internal class Hash
 {

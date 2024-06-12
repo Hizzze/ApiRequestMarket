@@ -1,22 +1,22 @@
 using System.Security.Claims;
+using ApiRequestMarket.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ApiRequestMarket.Controllers;
+namespace ApiRequestMarket;
 
 public class LoginController : Controller
 {
-    private readonly MainControllerUsers mainControllerUsers;
-
-    public LoginController(MainControllerUsers mainControllerUsers)
+    private MainControllerUsers users;
+    public LoginController(MainControllerUsers users)
     {
-        this.mainControllerUsers = mainControllerUsers;
+        this.users = users;
     }
     [HttpGet]
     public IActionResult Login()
     {
-        return View(); // Показывает страницу с формой входа
+        return View();
     }
 
     [HttpPost]
@@ -28,7 +28,7 @@ public class LoginController : Controller
             var claimsIdentity = new ClaimsIdentity(claims, "CookieAuth");
             var claimsPrincipal = new ClaimsPrincipal(claimsIdentity);
             await HttpContext.SignInAsync("CookieAuth", claimsPrincipal);
-            await mainControllerUsers.addUserToList(email);
+            await users.addUserToList(email);
             return RedirectToAction("Index", "Home"); // Перенаправление после успешного входа
         }
         else
@@ -39,7 +39,7 @@ public class LoginController : Controller
     }
     public async Task<IActionResult> Logout()
     {
-        await mainControllerUsers.deleteUserFromList(User.Identity.Name);
+        await users.deleteUserFromList(User.Identity.Name);
         await HttpContext.SignOutAsync("CookieAuth");
         return RedirectToAction("Index", "Home");
     }
@@ -47,7 +47,7 @@ public class LoginController : Controller
     [Authorize]
     public async Task<IActionResult> Profile()
     {
-        var user = await mainControllerUsers.getUserInfo(User.Identity.Name);
+        var user = await users.getUserInfo(User.Identity.Name);
         if (user == null)
         {
             return NotFound();
@@ -55,13 +55,6 @@ public class LoginController : Controller
         var model = new UserViewModel
         {
             Email = user.email,
-            Name = user.name,
-            LastName = user.lastName,
-            Phone = user.phone,
-            Address = user.address,
-            PostalCode = user.postalCode,
-            APM = user.APM,
-            Orders = user.orders
         };
         return View(model);
     }

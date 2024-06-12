@@ -1,4 +1,4 @@
-namespace ApiRequestMarket.Controllers;
+namespace ApiRequestMarket;
 
 public class MainControllerUsers
 {
@@ -6,13 +6,9 @@ public class MainControllerUsers
 
     public async Task addUserToList(string email)
     {
-        var (name, lastName, phone,address,postalCode, APM) = await Database.getUserInfoDatabase(email);
-        var user = new User(email, name, lastName, phone, address, postalCode, APM);
-        await user.loadCart();
-        await user.loadOrders();
+        var user = new User(email);
         userList.Add(user);
     }
-
     public async Task deleteUserFromList(string email)
     {
         var user = userList.FirstOrDefault(u => u.email == email);

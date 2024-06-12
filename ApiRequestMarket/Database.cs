@@ -1,6 +1,6 @@
 using MySqlConnector;
 
-namespace ApiRequestMarket.Controllers;
+namespace ApiRequestMarket;
 
 public class Database
 {
