@@ -3,44 +3,133 @@
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>@ViewData["Title"] - ApiRequestMarket</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
+    <title>@ViewData["Title"] - WebApplication2</title>
+    @* <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/> *@
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
-    <link rel="stylesheet" href="~/ApiRequestMarket.styles.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/WebApplication2.styles.css" asp-append-version="true"/>
 </head>
 <body>
-<header>
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-        <div class="container-fluid">
-            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">ApiRequestMarket</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                <ul class="navbar-nav flex-grow-1">
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                    </li>
-                </ul>
+<header class="header">
+    <div class="container">
+        <div class="header__nav">
+            <div class="header__nav-left">
+                <a class="header__nav-item" asp-controller="Home" asp-action="Index">Główna</a>
+                <a href="#footer" class="header__nav-item">Кontakt</a>
+            </div>
+            <a asp-controller="Home" asp-action="Index">
+                <img src="../images/logo2.webp" class="header__logo">
+            </a>
+            <div class="header__nav-right">
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <div class="dropdown">
+                        <a class="header__nav-item" asp-controller="Login" asp-action="Profile">
+                            @User.Identity.Name
+                        </a>
+                        <span onclick="toggleDropdown(event)" class="arrow">&#9662;</span>
+                        <div id="dropdownContent" class="dropdown-content">
+                            <a class="header__nav-item header__logout" asp-controller="Login" asp-action="Logout">Logout</a>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <div class="auth__inner">
+                        <a class="header__nav-item" asp-controller="Registration" asp-action="Registration">Rejestracja</a>
+                        <a class="header__nav-item" asp-controller="Login" asp-action="Login">Login</a>
+                    </div>
+                }
             </div>
         </div>
-    </nav>
+        <!-- Burger icon for mobile -->
+        <div class="burger" onclick="toggleBurgerMenu()">
+            <span class="burger__line"></span>
+            <span class="burger__line"></span>
+            <span class="burger__line"></span>
+        </div>
+        <!-- Mobile menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <a class="mobile-menu__item" asp-controller="Home" asp-action="Index">Główna</a>
+            <a href="#footer" class="mobile-menu__item">Кontakt</a>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <a class="mobile-menu__item" asp-controller="Login" asp-action="Profile">
+                    @User.Identity.Name
+                </a>
+                <a class="mobile-menu__item" asp-controller="Login" asp-action="Logout">Logout</a>
+            }
+            else
+            {
+                <a class="mobile-menu__item" asp-controller="Registration" asp-action="Registration">Rejestracja</a>
+                <a class="mobile-menu__item" asp-controller="Login" asp-action="Login">Login</a>
+            }
+        </div>
+    </div>
 </header>
+
+
 <div class="container">
     <main role="main" class="pb-3">
         @RenderBody()
     </main>
 </div>
 
-<footer class="border-top footer text-muted">
-    <div class="container">
-        &copy; 2024 - ApiRequestMarket - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-    </div>
-</footer>
+<footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <div class="footer__right">
+                    <h2 class="footer__title">
+                        Kontakty
+                    </h2>
+
+                    <div class="footer__right-list">
+                        <li class="footer__right-item">
+                            <p class="footer__right-text">
+                                Główne biuro:
+                                m. Poznań
+                            </p>
+                        </li>
+                        <li class="footer__right-item">
+                            <p class="footer__right-text">
+                                Odessa,Kharków
+                            </p>
+                        </li>
+
+                        <li class="footer__right-item">
+                            <a href="tel:+380675043257" class="footer__right-num">+380 067 504-32-57</a>
+                        </li>
+                        
+
+                        <li class="footer__right-item">
+                            Codziennie 08:00 - 20:00
+                        </li>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="footer__end">
+                <p class="copyright">
+                    Developed by Vladyslav Syzov and Yehor Sorochan
+                </p>
+
+                <img src="../images/logo.webp" alt="footer logo" class="footer__logo">
+
+                <div class="footer__social">
+                    <ul class="footer__social-list">
+                        <li><img src="../images/instagram.svg" alt=""></li>
+                        <li><img src="../images/telegram.svg" alt=""></li>
+                        <li><img src="../images/whatsapp.svg" alt=""></li>
+                        <li><img src="../images/facebook.svg" alt=""></li>
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+        
+    </footer> 
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script src="~/js/site.js" asp-append-version="true"></script>
