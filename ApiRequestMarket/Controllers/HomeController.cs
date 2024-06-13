@@ -45,10 +45,6 @@ public class HomeController : Controller
         model.Items = Database.getItemsList() ?? new List<Item>();
         return View("Index", model);
     }
-    public IActionResult Update()
-    {
-        return View();
-    }
     public IActionResult Privacy()
     {
         return View();
@@ -58,4 +54,5 @@ public class HomeController : Controller
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
+    
 }

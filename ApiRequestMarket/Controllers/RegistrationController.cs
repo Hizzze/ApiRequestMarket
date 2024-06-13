@@ -22,7 +22,6 @@ public class RegistrationController : Controller
         {
             ModelState.AddModelError(string.Empty, "Użytkownik o podanym adresie email już istnieje.");
             return View(model);
-            
         }
         else
         {

@@ -46,7 +46,6 @@
                   {
                       <div class="row">
                           <div class="col">
-                              
                               <a asp-controller="Add" asp-action="Add" type="button" class="btn btn-success">Add</a>
                               <table class="table">
                                   <thead>
@@ -74,10 +73,10 @@
                                               </form>
                                           </td>
                                           <td>
-                                              <form asp-controller="Home" asp-action="Update" method="post">
+                                              <form asp-controller="Update" asp-action="Update" method="get">
                                                   <input type="hidden" name="id" value="@item.id">
                                                   <button type="submit" class="btn btn-primary">Update</button>
-                                              </form>
+                                                  </form>
                                           </td>
                                       </tr>
                                   }

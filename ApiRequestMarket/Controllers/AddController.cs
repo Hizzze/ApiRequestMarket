@@ -16,4 +16,20 @@ public class AddController : Controller
         };
         return View(model);
     }
+
+    [Authorize]
+    [HttpPost]
+    public async Task<IActionResult> Add(AddViewModel model)
+    {
+        if (ModelState.IsValid)
+        {
+            string path = "../images/" + model.path;
+            if (await Database.AddNewItem(model.name, model.price, model.count, path, model.description,
+                    model.categoryId))
+            {
+                await MainControllerUsers.sendReloadToApi();
+            }
+        }
+        return RedirectToAction("Add", "Add");
+    }
 }

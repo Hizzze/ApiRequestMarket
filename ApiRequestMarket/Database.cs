@@ -67,6 +67,99 @@ public class Database
 
         return dict;
     }
+
+    public static async Task<bool> AddNewItem(string name, decimal price, int count, string path, string description, long categoryId)
+    {
+        using (var connection = new MySqlConnection(connectionString2))
+        {
+            try
+            {
+                await connection.OpenAsync();
+                using (var command = connection.CreateCommand())
+                {
+                    command.CommandText = "INSERT INTO items (name, price, count, path, description, category_id) " +
+                                          "VALUES (@name, @price, @count, @path, @description, @category_id)";
+                    command.Parameters.AddWithValue("@name", name);
+                    command.Parameters.AddWithValue("@price", price);
+                    command.Parameters.AddWithValue("@count", count);
+                    command.Parameters.AddWithValue("@path", path);
+                    command.Parameters.AddWithValue("@description", description);
+                    command.Parameters.AddWithValue("@category_id", categoryId);
+                    await command.ExecuteNonQueryAsync();
+                    return true;
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return false;
+                throw;
+            }
+        }
+    }
+
+    public static async Task<Item> GetItemById(long id)
+    {
+        using (var connection = new MySqlConnection(connectionString2))
+        {
+            try
+            {
+                await connection.OpenAsync();
+                using (var command = connection.CreateCommand())
+                {
+                    command.CommandText =
+                        "SELECT id, name, price, count, path, description, category_id FROM items WHERE id = @id";
+                    command.Parameters.AddWithValue("@id", id);
+                    var reader = await command.ExecuteReaderAsync();
+                    if (await reader.ReadAsync())
+                    {
+                        return new Item(reader.GetInt32(0), reader.GetString(1), reader.GetDecimal(2),
+                            reader.GetInt32(3),
+                            reader.GetString(4), reader.GetString(5), reader.GetInt64(6));
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
+
+        return null;
+    }
+
+    public static async Task<bool> UpdateItem(int id, string name, decimal price, int count, string path, string description, long category_id)
+    {
+        using (var connection = new MySqlConnection(connectionString2))
+        {
+            try
+            {
+                await connection.OpenAsync();
+                using (var command = connection.CreateCommand())
+                {
+                    command.CommandText =
+                        "UPDATE items SET name = @name, price = @price, count = @count, path = @path," +
+                        " description = @description, category_id = @category_id WHERE id = @id";
+                    command.Parameters.AddWithValue("@name", name);
+                    command.Parameters.AddWithValue("@price", price);
+                    command.Parameters.AddWithValue("@count", count);
+                    command.Parameters.AddWithValue("@path", path);
+                    command.Parameters.AddWithValue("@description", description);
+                    command.Parameters.AddWithValue("@category_id", category_id);
+                    command.Parameters.AddWithValue("@id", id);
+                    await command.ExecuteNonQueryAsync();
+                    return true;
+                }
+            }
+            catch (Exception e)
+            {
+                return false;
+                Console.WriteLine(e);
+                throw;
+            }
+        }
+    }
     public static async Task<bool> IsUserRegistered(string email)
     {
 

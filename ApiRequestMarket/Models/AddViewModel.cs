@@ -8,5 +8,6 @@ public class AddViewModel
     public int count { get; set; }
     public string path { get; set; }
     public string description { get; set; }
+    public long categoryId { get; set; }
     public Dictionary<long, string> categories = new Dictionary<long, string>();
 }
