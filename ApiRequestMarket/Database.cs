@@ -37,6 +37,36 @@ public class Database
             }
         }
     }
+
+    public static async Task<Dictionary<long,string>> GetCategories()
+    {
+        Dictionary<long, string> dict = new Dictionary<long, string>();
+        using (var connection = new MySqlConnection(connectionString))
+        {
+            try
+            {
+                connection.Open();
+                using (var command = connection.CreateCommand())
+                {
+                    command.CommandText = "SELECT category_id, category_name FROM categories";
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            dict[reader.GetInt64(0)] = reader.GetString(1);
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
+
+        return dict;
+    }
     public static async Task<bool> IsUserRegistered(string email)
     {
 
