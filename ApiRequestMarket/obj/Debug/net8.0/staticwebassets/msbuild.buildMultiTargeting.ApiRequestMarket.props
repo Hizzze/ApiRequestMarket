@@ -1,3 +1,3 @@
 ﻿<Project>
-  <Import Project="..\build\ApiRequestMarket.props" />
+  <Import Project="../build/ApiRequestMarket.props" />
 </Project>

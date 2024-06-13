@@ -25,52 +25,62 @@
                   <h1 class="header__title">
                       Next Vape <br>
                   </h1>
-                  <p class="header__text">
-                      Witamy w panelu administracyjnym, aby zarządzać dodawaniem produktów zaloguj się na swoje konto właściciela
-                  </p>
+                  
+                  
+                  
                   @if (!User.Identity.IsAuthenticated)
                   {
+                      <p class="header__text">
+                          Witamy w panelu administracyjnym, aby zarządzać dodawaniem produktów zaloguj się na swoje konto właściciela
+                      </p>
                       <a asp-controller="Login" asp-action="Login" class="header__section section__btn">Zaloguj się</a>
+                  }
+                  else
+                  {
+                      <p class="header__text">
+                          Witamy w panelu administracyjnym!
+                      </p>
                   }
   
                   @if (User.Identity.IsAuthenticated)
                   {
                       <div class="row">
                           <div class="col">
+                              
                               <a href="/Home/Add" type="button" class="btn btn-success">Add</a>
                               <table class="table">
                                   <thead>
-                                      <tr>
-                                          <th>Name</th>
-                                          <th>Description</th>
-                                          <th>Price</th>
-                                          <th>Image</th>
-                                          <td>Delete</td>
-                                          <td>Update</td>
-                                      </tr>
+                                  <tr>
+                                      <th>Name</th>
+                                      <th>Description</th>
+                                      <th>Price</th>
+                                      <th>Image</th>
+                                      <td>Delete</td>
+                                      <td>Update</td>
+                                  </tr>
                                   </thead>
                                   <tbody>
-                                      @foreach (var item in Model.Items)
-                                      {
-                                          <tr>
-                                              <td>@item.name</td>
-                                              <td>@item.description</td>
-                                              <td>@item.price zł</td>
-                                              <td>@item.pathImage</td>
-                                              <td>
-                                                  <form asp-controller="Home" asp-action="Delete" method="post">
-                                                      <input type="hidden" name="id" value="@item.id">
-                                                      <button type="submit" class="btn btn-danger">Delete</button>
-                                                  </form>
-                                              </td>
-                                              <td>
-                                                  <form asp-controller="Home" asp-action="Update" method="post">
-                                                      <input type="hidden" name="id" value="@item.description">
-                                                      <button type="submit" class="btn btn-primary">Update</button>
-                                                  </form>
-                                              </td>
-                                          </tr>
-                                      }
+                                  @foreach (var item in Model.Items)
+                                  {
+                                      <tr>
+                                          <td>@item.name</td>
+                                          <td>@item.description</td>
+                                          <td>@item.price zł</td>
+                                          <td>@item.pathImage</td>
+                                          <td>
+                                              <form asp-controller="Home" asp-action="Delete" method="post">
+                                                  <input type="hidden" name="id" value="@item.id">
+                                                  <button type="submit" class="btn btn-danger">Delete</button>
+                                              </form>
+                                          </td>
+                                          <td>
+                                              <form asp-controller="Home" asp-action="Update" method="post">
+                                                  <input type="hidden" name="id" value="@item.id">
+                                                  <button type="submit" class="btn btn-primary">Update</button>
+                                              </form>
+                                          </td>
+                                      </tr>
+                                  }
                                   </tbody>
                               </table>
                           </div>
