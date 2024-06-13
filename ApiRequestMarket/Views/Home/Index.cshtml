@@ -58,8 +58,8 @@
                                               <td>@item.price zł</td>
                                               <td>@item.pathImage</td>
                                               <td>
-                                                  <form asp-controller="Home" asp-action="" method="post">
-                                                      <input type="hidden" name="id" value="@item.name">
+                                                  <form asp-controller="Home" asp-action="Delete" method="post">
+                                                      <input type="hidden" name="id" value="@item.id">
                                                       <button type="submit" class="btn btn-danger">Delete</button>
                                                   </form>
                                               </td>

@@ -37,6 +37,14 @@ public class HomeController : Controller
         return View();
     }
 
+    public async Task<IActionResult> Delete(int id)
+    {
+        Database.DeleteItemFromDatabase(id);
+        MainControllerUsers.sendReloadToApi();
+        HomeViewModel model = new HomeViewModel();
+        model.Items = Database.getItemsList() ?? new List<Item>();
+        return View("Index", model);
+    }
     public IActionResult Update()
     {
         return View();
@@ -45,7 +53,6 @@ public class HomeController : Controller
     {
         return View();
     }
-
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {

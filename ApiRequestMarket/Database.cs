@@ -15,7 +15,28 @@ public class Database
         connectionString = config.GetConnectionString("DefaultConnection");
         connectionString2 = config.GetConnectionString("APIConnection");
     }
-    
+
+    public static async Task DeleteItemFromDatabase(int id)
+    {
+        using (var connection = new MySqlConnection(connectionString2))
+        {
+            try
+            {
+                await connection.OpenAsync();
+                using (var command = connection.CreateCommand())
+                {
+                    command.CommandText = "DELETE FROM items WHERE id = @id";
+                    command.Parameters.AddWithValue("@id", id);
+                    await command.ExecuteNonQueryAsync();
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
+    }
     public static async Task<bool> IsUserRegistered(string email)
     {
 
