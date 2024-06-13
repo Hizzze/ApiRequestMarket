@@ -1,4 +1,4 @@
-@model ApiRequestMarket.Models.HomeViewModel
+@model ApiRequestMarket.Models.UpdateViewModel
 
 @{
     Layout = null;
@@ -9,39 +9,73 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/site.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <title>Update</title>
 </head>
-@* <body> *@
-@*   <div class="container mt-5"> *@
-@*     <div class="row justify-content-center"> *@
-@*       <div class="col-md-6"> *@
-@*         <h2 class="text-center mb-4">Update Person</h2> *@
-@*         <form asp-controller="Home" asp-action=""> *@
-@*           <input type="hidden" name="id" value="@Model.id"> *@
-@*           <div class="form-group"> *@
-@*             <label for="firstName">First Name</label> *@
-@*             <input asp-for="firstName" type="text" class="form-control" id="firstName" placeholder="Enter first name" value="@Model.firstName"> *@
-@*             <span asp-validation-for="firstName"></span> *@
-@*           </div> *@
-@*           <div class="form-group"> *@
-@*             <label for="lastName">Last Name</label> *@
-@*             <input asp-for="secondName" type="text" class="form-control" id="lastName" placeholder="Enter last name" value="@Model.secondName"> *@
-@*             <span asp-validation-for="secondName"></span> *@
-@*           </div> *@
-@*           <div class="form-group"> *@
-@*             <label for="email">Age</label> *@
-@*             <input asp-for="age" type="text" class="form-control" id="age" placeholder="Enter email" value="@Model.age"> *@
-@*             <span asp-validation-for="age"></span> *@
-@*           </div> *@
-@*            *@
-@*           <button type="submit" class="btn btn-primary">Submit</button> *@
-@*         </form> *@
-@*       </div> *@
-@*     </div> *@
-@*   </div> *@
-@* *@
-@*   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> *@
-@*   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> *@
-@* </body> *@
+<body>
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <h2 class="text-center mb-4">Update Person</h2>
+        <form asp-controller="Home" asp-action="Update">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input asp-for="name" type="text" class="form-control"  placeholder="Enter name">
+            <span asp-validation-for="name"></span>
+          </div>
+          <div class="form-group">
+            <label for="description">Description</label>
+            <input asp-for="description" type="text" class="form-control"  placeholder="Enter description" >
+            <span asp-validation-for="description"></span>
+          </div>
+          <div class="form-group">
+            <label for="path">Path</label>
+            <input asp-for="path" type="text" class="form-control"  placeholder="Enter path" >
+            <span asp-validation-for="path"></span>
+          </div>
+          <div class="form-group">
+            <label for="price">Price</label>
+            <input asp-for="price" type="text" class="form-control" placeholder="Enter price" >
+            <span asp-validation-for="price"></span>
+          </div>
+          <div class="form-group">
+            <label for="count">Count</label>
+            <input asp-for="count" type="text" class="form-control"  placeholder="Enter price">
+            <span asp-validation-for="count"></span>
+          </div>
+           @* <select id="categorySelect" name="category" class="search__input form-control"> *@
+           @*                        <option value="">Select a category</option> *@
+           @*                        @if (Model.categories != null) *@
+           @*                        { *@
+           @*                            foreach (var category in Model.categories) *@
+           @*                            { *@
+           @*                                <option value="@category.Key">@category.Value</option> *@
+           @*                            } *@
+           @*                        } *@
+           @*                    </select> *@
+         
+
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+<style>
+    body {
+        color: #F8F9F9 !important;
+        background: #000 !important;
+    }
+    
+    input {
+        border-radius: 25px;
+        background-color: transparent !important;
+        border: 1px solid #532C59;
+    }
+</style>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
 </html>

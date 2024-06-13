@@ -9,75 +9,75 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ApiRequestMarket
 build_property.RootNamespace = ApiRequestMarket
-build_property.ProjectDir = C:\Users\1\RiderProjects\ApiRequestMarket\ApiRequestMarket\
+build_property.ProjectDir = /Users/vlad/RiderProjects/ApiRequestMarket/ApiRequestMarket/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\1\RiderProjects\ApiRequestMarket\ApiRequestMarket
+build_property.MSBuildProjectDirectory = /Users/vlad/RiderProjects/ApiRequestMarket/ApiRequestMarket
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/1/RiderProjects/ApiRequestMarket/ApiRequestMarket/Pages/Login/Login.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW5cTG9naW4uY3NodG1s
+[/Users/vlad/RiderProjects/ApiRequestMarket/ApiRequestMarket/Pages/Login/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTG9naW4vTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/1/RiderProjects/ApiRequestMarket/ApiRequestMarket/Pages/Login/Profile.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW5cUHJvZmlsZS5jc2h0bWw=
+[/Users/vlad/RiderProjects/ApiRequestMarket/ApiRequestMarket/Pages/Login/Profile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTG9naW4vUHJvZmlsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/1/RiderProjects/ApiRequestMarket/ApiRequestMarket/Pages/Registration/Registration.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0cmF0aW9uXFJlZ2lzdHJhdGlvbi5jc2h0bWw=
+[/Users/vlad/RiderProjects/ApiRequestMarket/ApiRequestMarket/Pages/Registration/Registration.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUmVnaXN0cmF0aW9uL1JlZ2lzdHJhdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/1/RiderProjects/ApiRequestMarket/ApiRequestMarket/Views/Add/Add.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRkXEFkZC5jc2h0bWw=
+[/Users/vlad/RiderProjects/ApiRequestMarket/ApiRequestMarket/Views/Add/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRkL0FkZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/1/RiderProjects/ApiRequestMarket/ApiRequestMarket/Views/CrudList/Add.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3J1ZExpc3RcQWRkLmNzaHRtbA==
+[/Users/vlad/RiderProjects/ApiRequestMarket/ApiRequestMarket/Views/CrudList/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ3J1ZExpc3QvQWRkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/1/RiderProjects/ApiRequestMarket/ApiRequestMarket/Views/CrudList/CrudIndex.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3J1ZExpc3RcQ3J1ZEluZGV4LmNzaHRtbA==
+[/Users/vlad/RiderProjects/ApiRequestMarket/ApiRequestMarket/Views/CrudList/CrudIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ3J1ZExpc3QvQ3J1ZEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/1/RiderProjects/ApiRequestMarket/ApiRequestMarket/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+[/Users/vlad/RiderProjects/ApiRequestMarket/ApiRequestMarket/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/1/RiderProjects/ApiRequestMarket/ApiRequestMarket/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+[/Users/vlad/RiderProjects/ApiRequestMarket/ApiRequestMarket/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/1/RiderProjects/ApiRequestMarket/ApiRequestMarket/Views/Home/Update.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxVcGRhdGUuY3NodG1s
+[/Users/vlad/RiderProjects/ApiRequestMarket/ApiRequestMarket/Views/Home/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9VcGRhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/1/RiderProjects/ApiRequestMarket/ApiRequestMarket/Views/Login/Login.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cTG9naW4uY3NodG1s
+[/Users/vlad/RiderProjects/ApiRequestMarket/ApiRequestMarket/Views/Login/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTG9naW4vTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/1/RiderProjects/ApiRequestMarket/ApiRequestMarket/Views/Registration/Registration.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVnaXN0cmF0aW9uXFJlZ2lzdHJhdGlvbi5jc2h0bWw=
+[/Users/vlad/RiderProjects/ApiRequestMarket/ApiRequestMarket/Views/Registration/Registration.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUmVnaXN0cmF0aW9uL1JlZ2lzdHJhdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/1/RiderProjects/ApiRequestMarket/ApiRequestMarket/Views/Shared/Error.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+[/Users/vlad/RiderProjects/ApiRequestMarket/ApiRequestMarket/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/1/RiderProjects/ApiRequestMarket/ApiRequestMarket/Views/Shared/_ValidationScriptsPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+[/Users/vlad/RiderProjects/ApiRequestMarket/ApiRequestMarket/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/1/RiderProjects/ApiRequestMarket/ApiRequestMarket/Views/_ViewImports.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+[/Users/vlad/RiderProjects/ApiRequestMarket/ApiRequestMarket/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/1/RiderProjects/ApiRequestMarket/ApiRequestMarket/Views/_ViewStart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+[/Users/vlad/RiderProjects/ApiRequestMarket/ApiRequestMarket/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/1/RiderProjects/ApiRequestMarket/ApiRequestMarket/Views/Shared/_Layout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = b-g5z4y5drx5
+[/Users/vlad/RiderProjects/ApiRequestMarket/ApiRequestMarket/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-od1z5gnpta
