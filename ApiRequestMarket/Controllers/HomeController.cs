@@ -34,7 +34,7 @@ public class HomeController : Controller
 
     public IActionResult Add()
     {
-        return RedirectToAction("Add", "Home");
+        return View();
     }
 
     public async Task<IActionResult> Delete(int id)

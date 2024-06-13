@@ -38,13 +38,21 @@
                 </div>
                 <div class="form-group">
                     <label for="name">Count</label>
-                    <input asp-for="count" type="text" class="form-control" id="name" placeholder="Enter name">
+                    <input asp-for="count" type="number" class="form-control" id="name" placeholder="Enter count">
                 </div>
-                  <div class="form-group">
-                                    <label for="name">Count</label>
-                                        <select asp-for="categories" type="text" class="form-control" id="name" placeholder="Enter category">
-                                             <option value="">--Please choose an option--</option>
-                                        </select></div>
+                <div class="form-group">
+                    <label for="categorySelect">Category</label>
+                    <select id="categorySelect" name="category" class="search__input form-control">
+                        <option value="">Select a category</option>
+                        @if (Model.categories != null)
+                        {
+                            foreach (var category in Model.categories)
+                            {
+                                <option value="@category.Key">@category.Value</option>
+                            }
+                        }
+                    </select>
+                </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
@@ -58,11 +66,10 @@
     }
     
     input {
-    border-radius: 25px;
-    background-color: transparent !important;
-    border: 1px solid #532C59;
+        border-radius: 25px;
+        background-color: transparent !important;
+        border: 1px solid #532C59;
     }
-    
 </style>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
