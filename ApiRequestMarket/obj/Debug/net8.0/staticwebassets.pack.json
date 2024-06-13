@@ -13,6 +13,18 @@
       "PackagePath": "staticwebassets/favicon.ico"
     },
     {
+      "Id": "/Users/vlad/RiderProjects/ApiRequestMarket/ApiRequestMarket/wwwroot/images/shape1.png",
+      "PackagePath": "staticwebassets/images/shape1.png"
+    },
+    {
+      "Id": "/Users/vlad/RiderProjects/ApiRequestMarket/ApiRequestMarket/wwwroot/images/shape2.png",
+      "PackagePath": "staticwebassets/images/shape2.png"
+    },
+    {
+      "Id": "/Users/vlad/RiderProjects/ApiRequestMarket/ApiRequestMarket/wwwroot/images/shape4.png",
+      "PackagePath": "staticwebassets/images/shape4.png"
+    },
+    {
       "Id": "/Users/vlad/RiderProjects/ApiRequestMarket/ApiRequestMarket/wwwroot/js/site.js",
       "PackagePath": "staticwebassets/js/site.js"
     },

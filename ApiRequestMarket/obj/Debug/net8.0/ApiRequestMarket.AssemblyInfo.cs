@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ApiRequestMarket")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+46962819ef9288255026dae48ec97cd074afb44b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+023d4f3dbddc6c503f7456d9fed72883de3fa03a")]
 [assembly: System.Reflection.AssemblyProductAttribute("ApiRequestMarket")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ApiRequestMarket")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
