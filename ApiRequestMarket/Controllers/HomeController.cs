@@ -31,6 +31,16 @@ public class HomeController : Controller
         }
         return View(model);
     }
+
+    public IActionResult Add()
+    {
+        return View();
+    }
+
+    public IActionResult Update()
+    {
+        return View();
+    }
     public IActionResult Privacy()
     {
         return View();
