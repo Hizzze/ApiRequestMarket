@@ -10,4 +10,8 @@
       <PackageReference Include="MySqlConnector" Version="2.3.7" />
     </ItemGroup>
 
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Pages\Add\Add.cshtml" />
+    </ItemGroup>
+
 </Project>

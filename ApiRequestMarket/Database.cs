@@ -41,7 +41,7 @@ public class Database
     public static async Task<Dictionary<long,string>> GetCategories()
     {
         Dictionary<long, string> dict = new Dictionary<long, string>();
-        using (var connection = new MySqlConnection(connectionString))
+        using (var connection = new MySqlConnection(connectionString2))
         {
             try
             {
